@@ -5,10 +5,10 @@ using UnityEngine;
 public class DialogueHandler : MonoBehaviour
 {
 
-    private Utillity _selectedUtillity;
+    public Utillity _selectedUtillity;
     private GameObject _selectedDialogue;
     [SerializeField] GameObject _dialogueBackground;
-    [SerializeField] Dialogue _dialogueObject;
+    [SerializeField] public Dialogue _dialogueObject;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +32,11 @@ public class DialogueHandler : MonoBehaviour
         _dialogueBackground.SetActive(true);
         _dialogueObject.gameObject.SetActive(true);
         _dialogueObject.UpdateDialogue(dialogue, output, pipline);
+    }
+
+    public void CloseDialogue()
+    {
+        _dialogueBackground.SetActive(false);
+        _dialogueObject.CloseDialogue();
     }
 }

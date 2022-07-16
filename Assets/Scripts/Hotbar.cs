@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Hotbar : MonoBehaviour
 {
-    private List<Item> _inventory = new List<Item>();
+    public List<Item> _inventory = new List<Item>();
     [SerializeField]private Transform _inventoryContainer;
+
+    [SerializeField] private Transform[] _inventorySlots;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +25,27 @@ public class Hotbar : MonoBehaviour
 
     public void AddItemToInventory(Item item)
     {
-        if(_inventory.Count < 9)
+        if(_inventory.Count < 7)
         {
             _inventory.Add(item);
-            item.transform.SetParent(_inventoryContainer);
+            item.transform.SetParent(_inventorySlots[_inventory.IndexOf(item)]);
+            item.transform.position = _inventorySlots[_inventory.IndexOf(item)].position;
+            item.setStartingPosition(_inventorySlots[_inventory.IndexOf(item)].position); 
         }
 
+    }
 
+    public void RemoveItem(Item item)
+    {
+        if (_inventory.Contains(item))
+        {
+            _inventory.Remove(item);
+        }
        
+    }
+
+    public void CheckForEmpySlot()
+    {
+        
     }
 }
