@@ -21,6 +21,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _option1Text;
     [SerializeField] private Button _option_2;
     [SerializeField] private TextMeshProUGUI _option2Text;
+    [SerializeField] private Button _bloodCostButton;
     private bool _dialogueLocked;
 
     [SerializeField] private Hotbar _hotbar;
@@ -57,6 +58,7 @@ public class Dialogue : MonoBehaviour
             _option_1.gameObject.SetActive(false);
             _option_2.gameObject.SetActive(false);
             _confirmForInput.gameObject.SetActive(false);
+            _bloodCostButton.gameObject.SetActive(false);
 
             if (mode == 1)
             {
@@ -87,6 +89,7 @@ public class Dialogue : MonoBehaviour
                 _confirmButton.gameObject.SetActive(true);
                 _inputContainer.gameObject.SetActive(true);
                 _outputContainer.gameObject.SetActive(true);
+                _bloodCostButton.gameObject.SetActive(true);
 
                 if (output != null)
                 {
@@ -195,6 +198,18 @@ public class Dialogue : MonoBehaviour
         }
 
         
+    }
+
+    public void PayInBlood()
+    {
+        
+            if (_dialogueHandlerRef._selectedUtillity.IsVending)
+            {
+                _dialogueHandlerRef._playerRef.TakeDamage(10);
+            _dialogueHandlerRef._selectedUtillity.PiplineBlood();
+            }
+        
+
     }
 
     public void ConfirmForInput()

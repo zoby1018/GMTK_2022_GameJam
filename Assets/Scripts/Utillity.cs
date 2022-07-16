@@ -109,6 +109,14 @@ public class Utillity : MonoBehaviour
         }
     }
 
+    public void PiplineBlood()
+    {
+        _outputItem = _outputs[Random.Range(0, _outputs.Count)];
+        //_outputItem = _outputs[0];
+        _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
+        _outputItem = null;
+    }
+
     public void OutputFromItem(Item item)
     {
         Debug.Log("Item output: " + item.Name);

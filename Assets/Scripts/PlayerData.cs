@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour
 {
@@ -42,8 +43,10 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         _currentHealth = _maxHealth;
+        _dialogueHandlerRef = FindObjectOfType<DialogueHandler>();
+        _hotbar = FindObjectOfType<Hotbar>();
 
-        
+
     }
 
     private void OnLevelWasLoaded(int level)
@@ -88,7 +91,13 @@ public class PlayerData : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Damage taken");
         _currentHealth -= damage;
+
+        if(_currentHealth <= 0)
+        {
+            SceneManager.LoadScene("Death");
+        }
     }
 
 
