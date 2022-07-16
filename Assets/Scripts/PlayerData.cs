@@ -20,4 +20,10 @@ public class PlayerData : MonoBehaviour
     {
         _fillImage.fillAmount = Mathf.Lerp(_fillImage.fillAmount, _currentHealth / _maxHealth, Time.deltaTime * 10f);
     }
+
+
+    public void TakeDamage(float damage)
+    {
+        _currentHealth -= damage;
+    }
 }

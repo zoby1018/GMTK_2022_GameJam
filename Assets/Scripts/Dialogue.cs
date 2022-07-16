@@ -15,10 +15,14 @@ public class Dialogue : MonoBehaviour
     [SerializeField] public Transform _outputContainer;
     [SerializeField] public Transform _inputContainer;
     [SerializeField] private Button _confirmButton;
+    [SerializeField] private Button _option_1;
+    [SerializeField] private TextMeshProUGUI _option1Text;
+    [SerializeField] private Button _option_2;
+    [SerializeField] private TextMeshProUGUI _option2Text;
 
     [SerializeField] private Hotbar _hotbar;
 
-    private DialogueHandler _dialogueHandlerRef;
+    [HideInInspector]private DialogueHandler _dialogueHandlerRef;
 
     private void Awake()
     {
@@ -41,6 +45,11 @@ public class Dialogue : MonoBehaviour
     public void UpdateDialogue(string text, Item output, int mode)
     {
         DestroyInput();
+        _inputContainer.gameObject.SetActive(false);
+        _outputContainer.gameObject.SetActive(false);
+        _confirmButton.gameObject.SetActive(false);
+        _option_1.gameObject.SetActive(false);
+        _option_2.gameObject.SetActive(false);
 
         if (mode == 1)
         {
@@ -69,6 +78,7 @@ public class Dialogue : MonoBehaviour
             _inputContainer.localPosition = new Vector3(-120, -50, 0);
             _confirmButton.gameObject.SetActive(true);
             _inputContainer.gameObject.SetActive(true);
+            _outputContainer.gameObject.SetActive(true);
 
             if (output != null)
             {
@@ -81,6 +91,19 @@ public class Dialogue : MonoBehaviour
                 
 
             }
+
+        }
+        else if (mode == 3)
+        {
+            _dialogueText.text = text;
+            _option1Text.text = _dialogueHandlerRef._selectedUtillity.Option1Text;
+            _option2Text.text = _dialogueHandlerRef._selectedUtillity.Option2Text;
+            _option_1.gameObject.SetActive(true);
+            _option_2.gameObject.SetActive(true);
+        }
+        else if(mode == 4)
+        {
+            _dialogueText.text = text;
 
         }
     }
@@ -142,5 +165,15 @@ public class Dialogue : MonoBehaviour
     public void setInput(Item item)
     {
         _input = item;
+    }
+
+    public void TriggerOption1()
+    {
+        _dialogueHandlerRef._selectedUtillity.TriggerOption1();
+    }
+
+    public void TriggerOption2()
+    {
+        _dialogueHandlerRef._selectedUtillity.TriggerOption2();
     }
 }

@@ -10,6 +10,7 @@ public class Utillity : MonoBehaviour
     //1 == outputs item
     //2 == item conversion
     //3 == dialogue with 2 choices
+    //4 == Just text
 
     [SerializeField] private bool _isVending;
     public bool IsVending => _isVending;
@@ -20,12 +21,20 @@ public class Utillity : MonoBehaviour
     [SerializeField] private List<Item> _outputs = new List<Item>();
 
 
-    private DialogueHandler _dialogueHandlerRef;
+    [HideInInspector]public DialogueHandler _dialogueHandlerRef;
+    private UtillityOptions _uoptions;
+
+    [SerializeField] private string _option1;
+    [HideInInspector] public string Option1Text => _option1;
+    [SerializeField] private string _option2;
+    [HideInInspector] public string Option2Text => _option2;
 
     // Start is called before the first frame update
     void Start()
     {
-        _dialogueHandlerRef = FindObjectOfType<DialogueHandler>();   
+        _dialogueHandlerRef = FindObjectOfType<DialogueHandler>();
+        _uoptions = GetComponent<UtillityOptions>();
+        
     }
 
     // Update is called once per frame
@@ -76,5 +85,15 @@ public class Utillity : MonoBehaviour
             _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
             _outputItem = null;
         }
+    }
+
+    public void TriggerOption1()
+    {
+        _uoptions.Option1();
+    }
+
+    public void TriggerOption2()
+    {
+        _uoptions.Option2();
     }
 }
