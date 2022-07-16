@@ -165,6 +165,11 @@ public class Dialogue : MonoBehaviour
         
     }
 
+    public void CloseDialogueButton()
+    {
+        _dialogueHandlerRef.CloseDialogue();
+    }
+
     public void DestroyInput()
     {
         if(_input != null)
