@@ -5,12 +5,18 @@ using UnityEngine;
 public class Utillity : MonoBehaviour
 {
     [SerializeField] private string _dialogue;
+    [SerializeField] private string _phase2Dialogue;
     [SerializeField] private Item _outputItem;
     [SerializeField] private int _interactionMode;
     //1 == outputs item
     //2 == item conversion
     //3 == dialogue with 2 choices
     //4 == Just text
+    //5 == Requires input, then gives a result
+    //6 == Elevator
+    //7 == Door
+
+    //10 == Liquid
 
     [SerializeField] private bool _isVending;
     public bool IsVending => _isVending;
@@ -45,8 +51,24 @@ public class Utillity : MonoBehaviour
 
     public void OnUtillityClick()
     {
-        _dialogueHandlerRef.SetSelectedUitillity(this);
-        _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
+        if(_oneTimeInventory && _stock > 0)
+        {
+            _dialogueHandlerRef.SetSelectedUitillity(this);
+            _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
+            return;
+        }
+        else if(_oneTimeInventory && _stock <= 0)
+        {
+            _dialogueHandlerRef.SetSelectedUitillity(this);
+            _dialogueHandlerRef.OpenDialogue(_phase2Dialogue, _outputItem, 4);
+        }
+        else if(!_oneTimeInventory)
+        {
+            _dialogueHandlerRef.SetSelectedUitillity(this);
+            _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
+            return;
+        }
+        
         
     }
 
@@ -79,12 +101,18 @@ public class Utillity : MonoBehaviour
         
         if (_requiredInput.Contains(item.Name))
         {
-            
+            Debug.Log("Prerequisite met converting item");
             _outputItem = _outputs[Random.Range(0, _outputs.Count)];
             //_outputItem = _outputs[0];
             _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
             _outputItem = null;
         }
+    }
+
+    public void OutputFromItem(Item item)
+    {
+        Debug.Log("Item output: " + item.Name);
+        _uoptions.OutputOption(item);
     }
 
     public void TriggerOption1()

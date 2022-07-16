@@ -15,11 +15,11 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private bool dragging = false;
     private Vector3 pointerDisplacement = Vector3.zero;
     private float zDisplacement;
-    private bool _attemptingToAddToInventory;
-    private Hotbar _hotbar;
-    private Transform _inputBox;
+    public bool _attemptingToAddToInventory;
+    public Hotbar _hotbar;
+    public Transform _inputBox;
 
-    private bool _isInInventory;
+    public bool _isInInventory;
 
     private DialogueHandler _dialogueHandlerRef;
 
@@ -29,6 +29,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Awake()
     {
        _dialogueHandlerRef = FindObjectOfType<DialogueHandler>();
+        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()
@@ -92,7 +93,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
 
             dragging = false;
-            transform.position = _startingPosition;
+            this.transform.position = _startingPosition;
 
         }
     }
@@ -156,5 +157,10 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             AddToHotBar();
         }
+    }
+
+    public void UpdateDialogueHandler(DialogueHandler dialogueHandler)
+    {
+        _dialogueHandlerRef = dialogueHandler;
     }
 }

@@ -142,8 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8163c29db1252854f929997d531dcb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: First Aid Kit
+  _name: Medpack
   UsePointerDisplacement: 1
+  _attemptingToAddToInventory: 0
+  _inputBox: {fileID: 0}
+  _isInInventory: 0
 --- !u!50 &-8050598667151466110
 Rigidbody2D:
   serializedVersion: 4

@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1021, y: 0.0079}
-  m_SizeDelta: {x: 2.1993, y: 4.3657}
+  m_AnchoredPosition: {x: -0.0104, y: -0.000005126}
+  m_SizeDelta: {x: 1.4547, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8889191370035164341
 CanvasRenderer:
@@ -171,7 +171,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8889191370213641805
 Canvas:
@@ -309,7 +309,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6587e9b76ac48db46b9437c8c5caa3cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e56ca4a816360484faa06da658691e70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -334,4 +334,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogue: 
   _outputItem: {fileID: 0}
-  _isPipeline: 0
+  _interactionMode: 0
+  _isVending: 0
+  _oneTimeInventory: 0
+  _stock: 0
+  _requiredInput: []
+  _outputs: []
+  _dialogueHandlerRef: {fileID: 0}
+  _option1: 
+  _option2: 

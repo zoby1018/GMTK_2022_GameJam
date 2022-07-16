@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueHandler : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] GameObject _dialogueBackground;
     [SerializeField] public Dialogue _dialogueObject;
     [SerializeField] public PlayerData _playerRef;
+    [SerializeField] public Image _fillImage;
 
     // Start is called before the first frame update
     void Start()
