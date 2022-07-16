@@ -133,7 +133,7 @@ public class Dialogue : MonoBehaviour
             }
             else if (mode == 7)
             {
-                _hotbar.PrepInventoryForLoad();
+                _dialogueHandlerRef._hotbar.PrepInventoryForLoad();
                 _dialogueLocked = true;
                 SceneManager.LoadScene(text);
             }
@@ -146,7 +146,7 @@ public class Dialogue : MonoBehaviour
     {
         if(_output != null)
         {
-            if (!_hotbar._inventory.Contains(_output))
+            if (!_dialogueHandlerRef._hotbar._inventory.Contains(_output))
             {
                
                 Destroy(_output.gameObject);
@@ -174,7 +174,7 @@ public class Dialogue : MonoBehaviour
     {
         if(_input != null)
         {
-            _hotbar.RemoveItem(_input);
+            _dialogueHandlerRef._hotbar.RemoveItem(_input);
             Destroy(_input.gameObject);
             _input = null;
         }

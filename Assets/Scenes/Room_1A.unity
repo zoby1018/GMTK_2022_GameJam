@@ -178,6 +178,7 @@ MonoBehaviour:
   _dialogueObject: {fileID: 89151242}
   _playerRef: {fileID: 968073382}
   _fillImage: {fileID: 1569512706}
+  _hotbar: {fileID: 1388244640}
 --- !u!4 &426614679
 Transform:
   m_ObjectHideFlags: 0
@@ -463,6 +464,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501737850}
     m_Modifications:
+    - target: {fileID: 2282343459913197727, guid: 4f9e311265b4f1044ba64b4647db3ba9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 89151242}
+    - target: {fileID: 2282343459913197727, guid: 4f9e311265b4f1044ba64b4647db3ba9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseDialogueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282343459913197727, guid: 4f9e311265b4f1044ba64b4647db3ba9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Dialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2282343460558500198, guid: 4f9e311265b4f1044ba64b4647db3ba9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

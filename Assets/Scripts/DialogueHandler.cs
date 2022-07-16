@@ -12,8 +12,14 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] public Dialogue _dialogueObject;
     [SerializeField] public PlayerData _playerRef;
     [SerializeField] public Image _fillImage;
-
+    [SerializeField] public Hotbar _hotbar;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        
+    }
+
     void Start()
     {
         

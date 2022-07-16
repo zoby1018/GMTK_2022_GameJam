@@ -167,6 +167,7 @@ MonoBehaviour:
   _dialogueObject: {fileID: 1623508331}
   _playerRef: {fileID: 0}
   _fillImage: {fileID: 1569512706}
+  _hotbar: {fileID: 1388244640}
 --- !u!4 &426614679
 Transform:
   m_ObjectHideFlags: 0
@@ -421,12 +422,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681195, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370884681195, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370884681195, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.91
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681195, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 1.079
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681195, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: m_LocalPosition.z
