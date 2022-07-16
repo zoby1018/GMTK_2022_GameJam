@@ -9,6 +9,7 @@ public class DialogueHandler : MonoBehaviour
     private GameObject _selectedDialogue;
     [SerializeField] GameObject _dialogueBackground;
     [SerializeField] public Dialogue _dialogueObject;
+    [SerializeField] public PlayerData _playerRef;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,11 @@ public class DialogueHandler : MonoBehaviour
         _selectedUtillity = utillity;
     }
 
-    public void OpenDialogue(string dialogue, Item output, bool pipline)
+    public void OpenDialogue(string dialogue, Item output, int mode)
     {
         _dialogueBackground.SetActive(true);
         _dialogueObject.gameObject.SetActive(true);
-        _dialogueObject.UpdateDialogue(dialogue, output, pipline);
+        _dialogueObject.UpdateDialogue(dialogue, output, mode);
     }
 
     public void CloseDialogue()

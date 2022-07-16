@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System;
 
 public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -25,8 +24,6 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private DialogueHandler _dialogueHandlerRef;
 
     private bool _recentlyLeftHitbox;
-
-    public static Action removeItemFromBox;
 
 
     private void Awake()
@@ -79,11 +76,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 if (!_hotbar._inventory.Contains(this))
                 {
-                    _hotbar.AddItemToInventory(this);
-                    _isInInventory = true;
-                    _attemptingToAddToInventory = false;
-                    _dialogueHandlerRef._selectedUtillity.RemoveStock();
-                    _inputBox = null;
+                    AddToHotBar();
                 }
                
             }
@@ -139,8 +132,29 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 _inputBox = null;
             }
-            collision.GetComponentInParent<Dialogue>().ClearInput();
+            if(collision != null)
+            {
+                collision.GetComponentInParent<Dialogue>().ClearInput();
+            }
+           
 
+        }
+    }
+
+    public void AddToHotBar()
+    {
+        _hotbar.AddItemToInventory(this);
+        _isInInventory = true;
+        _attemptingToAddToInventory = false;
+        _dialogueHandlerRef._selectedUtillity.RemoveStock();
+        _inputBox = null;
+    }
+
+    public void CheckIfInInput()
+    {
+        if(_isInInventory == false)
+        {
+            AddToHotBar();
         }
     }
 }

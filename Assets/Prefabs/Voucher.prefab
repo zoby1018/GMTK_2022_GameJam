@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9218964100477009236}
   - component: {fileID: -8050598667151466110}
   m_Layer: 5
-  m_Name: Item_C
+  m_Name: Voucher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2576a5fa14576594db96d9d1353b5a43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba41dd5e838d36b4bb7c2291735fe423, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

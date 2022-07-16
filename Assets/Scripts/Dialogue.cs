@@ -38,11 +38,11 @@ public class Dialogue : MonoBehaviour
     }
 
 
-    public void UpdateDialogue(string text, Item output, bool pipeline)
+    public void UpdateDialogue(string text, Item output, int mode)
     {
         DestroyInput();
 
-        if (!pipeline)
+        if (mode == 1)
         {
             _dialogueText.text = text;
             _outputContainer.localPosition = new Vector3(0, -100, 0);
@@ -62,7 +62,7 @@ public class Dialogue : MonoBehaviour
                 
             }
         }
-        else if (pipeline)
+        else if (mode == 2)
         {
             _dialogueText.text = text;
             _outputContainer.localPosition = new Vector3(120, -50, 0);
@@ -91,10 +91,18 @@ public class Dialogue : MonoBehaviour
         {
             if (!_hotbar._inventory.Contains(_output))
             {
-                _output = null;
+               
                 Destroy(_output.gameObject);
+              
             }
-           
+
+            _output = null;
+        }
+
+        if(_input != null)
+        {
+            _input.CheckIfInInput();
+            _input = null;
         }
 
         

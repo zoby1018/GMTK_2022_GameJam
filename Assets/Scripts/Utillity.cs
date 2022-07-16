@@ -6,7 +6,10 @@ public class Utillity : MonoBehaviour
 {
     [SerializeField] private string _dialogue;
     [SerializeField] private Item _outputItem;
-    [SerializeField] private bool _isPipeline;
+    [SerializeField] private int _interactionMode;
+    //1 == outputs item
+    //2 == item conversion
+    //3 == dialogue with 2 choices
 
     [SerializeField] private bool _isVending;
     public bool IsVending => _isVending;
@@ -34,7 +37,7 @@ public class Utillity : MonoBehaviour
     public void OnUtillityClick()
     {
         _dialogueHandlerRef.SetSelectedUitillity(this);
-        _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _isPipeline);
+        _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
         
     }
 
@@ -68,9 +71,10 @@ public class Utillity : MonoBehaviour
         if (_requiredInput.Contains(item.Name))
         {
             
-            //_outputItem = _outputs[Random.Range(0, _outputs.Count)];
-            _outputItem = _outputs[0];
-            _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _isPipeline);
+            _outputItem = _outputs[Random.Range(0, _outputs.Count)];
+            //_outputItem = _outputs[0];
+            _dialogueHandlerRef.OpenDialogue(_dialogue, _outputItem, _interactionMode);
+            _outputItem = null;
         }
     }
 }
