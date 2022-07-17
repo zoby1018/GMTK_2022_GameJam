@@ -8,8 +8,9 @@ public class LockedDoor : UtillityOptions
     
     public override void OutputOption(Item item)
     {
-        if (item.Name == "ID")
+        if (item.Name == "ID" || item.Name == "Liquidator")
         {
+            _utillityRef._dialogueHandlerRef._hotbar.PrepInventoryForLoad();
             SceneManager.LoadScene(_utillityRef._dialogue);
         }
 

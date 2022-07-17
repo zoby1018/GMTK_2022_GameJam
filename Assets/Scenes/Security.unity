@@ -949,6 +949,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501737850}
     m_Modifications:
+    - target: {fileID: 2282343459021344821, guid: 4f9e311265b4f1044ba64b4647db3ba9, type: 3}
+      propertyPath: _hotbar
+      value: 
+      objectReference: {fileID: 1388244640}
     - target: {fileID: 2282343459913197727, guid: 4f9e311265b4f1044ba64b4647db3ba9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3002,6 +3006,10 @@ PrefabInstance:
       value: Birdo
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: _stock
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: _dialogue
       value: Do you have any of those vouchers, I already spent mine.
       objectReference: {fileID: 0}
@@ -3012,6 +3020,10 @@ PrefabInstance:
     - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: _interactionMode
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: _oneTimeInventory
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681195, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: m_RootOrder
@@ -3067,6 +3079,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+--- !u!1 &2146015902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8889191370884681193, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+  m_PrefabInstance: {fileID: 2146015901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2146015903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146015902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9eece9e7bb301d47a093305024ad17e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reward: {fileID: 9218964100477009236, guid: 85a080d9e93fec649aceeab5f7a3f34b, type: 3}
 --- !u!1001 &8889191370484922165
 PrefabInstance:
   m_ObjectHideFlags: 0

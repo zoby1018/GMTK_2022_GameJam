@@ -55,6 +55,7 @@ public class Hotbar : MonoBehaviour
             item._isInInventory = true;
             item._inputBox = null;
             item._hotbar = this;
+            item.setStartingPosition(_inventorySlots[_inventory.IndexOf(item)].position);
         }
     }
 

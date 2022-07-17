@@ -201,9 +201,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogue: Oh no what have you done.
   _phase2Dialogue: Somebody will have to clean up this mess.
-  _outputItem: {fileID: 9218964100477009236, guid: e3f4621c35a1b7448aec59ff2b285fa1, type: 3}
+  _outputItem: {fileID: 9218964100477009236, guid: ffc197ffab9082e4d9eb7fe20385d1c5, type: 3}
   _interactionMode: 1
   _isVending: 0
+  _toast: {fileID: 0}
+  _toastText: {fileID: 0}
+  _toatDialogue: 
+  _doesAToast: 0
   _oneTimeInventory: 1
   _stock: 1
   _requiredInput: []

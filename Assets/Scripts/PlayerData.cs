@@ -17,7 +17,12 @@ public class PlayerData : MonoBehaviour
 
 
     public bool _mouseEnding;
+    public bool _noCoffee;
+    public bool _rollOfDice;
+    public bool _mercy;
+    public bool _insane;
     public bool _nullEnding = true;
+    public bool _coffee;
 
     public string[] ending_dialogue = 
     {
@@ -104,9 +109,25 @@ public class PlayerData : MonoBehaviour
 
     public int SetEnding()
     {
-        if (_mouseEnding)
+        if (_coffee)
         {
             return 1;
+        }
+        else if (_noCoffee)
+        {
+            return 2;
+        }
+        else if (_mercy)
+        {
+            return 3;
+        }
+        else if (_insane)
+        {
+            return 4;
+        }
+        else if (_rollOfDice)
+        {
+            return 5;
         }
         else
         {

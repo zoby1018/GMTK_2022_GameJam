@@ -1142,12 +1142,37 @@ MonoBehaviour:
   _battery: {fileID: 0}
   _inventory: []
   _mouseEnding: 0
+  _noCoffee: 0
+  _rollOfDice: 0
+  _mercy: 0
+  _insane: 0
   _nullEnding: 1
+  _coffee: 0
   ending_dialogue:
   - 'Ending 01: You did your job with no questions or complaints. You continued to
     do so day in and day out never wondering If there was more. Why did you do it?
     Whats the point in aksing unsolvable questions.'
-  - ' "Ending 02: You gave a mouse a cookie and now you have a friend for life."'
+  - 'Ending 01: Emplyee of the Month. You did your job with no questions or complaints.
+    You continued to do so day in and day out. Never wondering if there was more.'
+  - 'Ending 02: No Coffee.  You arrived to the boss in excellent time, but seemed
+    to fail the most simple of request. You failed to give the boss Coffee and are
+    swiftly fired from your job. At least now you can perhaps seek out employment
+    at a better company. But something tells me that will won''t be likely anytime
+    soon.'
+  - 'Ending 03: Mercy.  A bittersweet end to Benjamin Alan Philips Reginald Mortimer
+    the third, but at least now the ancient, almost mummified tortoise can finally
+    be laid to rest. Obviously you were promptly fired, but instead of being sent
+    to prison for murder. The company decided another fate for you, locked away deep
+    in the facility. Who knows what they plan to do, but at least you can feel good
+    about your morale choices.'
+  - 'Ending 04: Insane.  You did your job, or at least that''s what the others believe.
+    You swiftly get promoted and work your way up the company. Your superiors love
+    your candid attitude and your willingness to do what it takes to make it to the
+    top. In the end only you and Mr. Benjamin know what happened to poor little Ratto
+    that faithful morning.'
+  - 'Ending 02.5: Roll of the Dice. You almost forgot to get your boss his coffee.
+    Lucky for you you''re spouse called informing you that your family has won the
+    lottery. Now you can live the good life and put all this behind you.'
 --- !u!4 &968073383
 Transform:
   m_ObjectHideFlags: 0
@@ -2808,6 +2833,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoxUtillity
       objectReference: {fileID: 0}
+    - target: {fileID: 2288381406777379038, guid: deadf08162d1d8440b599c02a42c876c, type: 3}
+      propertyPath: _outputs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288381406777379038, guid: deadf08162d1d8440b599c02a42c876c, type: 3}
+      propertyPath: _outputs.Array.data[3]
+      value: 
+      objectReference: {fileID: 9218964100477009236, guid: 5a33a3a00aba3b44fbaeccf5a784e102, type: 3}
+    - target: {fileID: 2288381406777379038, guid: deadf08162d1d8440b599c02a42c876c, type: 3}
+      propertyPath: _outputs.Array.data[4]
+      value: 
+      objectReference: {fileID: 9218964100477009236, guid: dfd427d5cbcc85d4cb0978d7d329c0a5, type: 3}
     - target: {fileID: 2288381406777379039, guid: deadf08162d1d8440b599c02a42c876c, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2932,7 +2969,11 @@ PrefabInstance:
     - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: _outputs.Array.data[2]
       value: 
-      objectReference: {fileID: 9218964100477009236, guid: 1c044876c7ae6274489bc8462429c75e, type: 3}
+      objectReference: {fileID: 9218964100477009236, guid: 5a33a3a00aba3b44fbaeccf5a784e102, type: 3}
+    - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: _outputs.Array.data[3]
+      value: 
+      objectReference: {fileID: 9218964100477009236, guid: dfd427d5cbcc85d4cb0978d7d329c0a5, type: 3}
     - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: _requiredInput.Array.size
       value: 1

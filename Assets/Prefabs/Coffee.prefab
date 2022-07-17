@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9218964100477009236}
   - component: {fileID: -8050598667151466110}
   m_Layer: 5
-  m_Name: EmptyMug
+  m_Name: Coffee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8163c29db1252854f929997d531dcb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Empty Mug
-  _tooltip: It's an empty mug!
+  _name: Coffee
+  _tooltip: Coffee for the boss!
   UsePointerDisplacement: 1
   _attemptingToAddToInventory: 0
   _hotbar: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b42aea3f48566c64e8b7de6ef0a62b64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85fb9f5819b42864f901a5e85c64f988, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
