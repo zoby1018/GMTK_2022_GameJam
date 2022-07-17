@@ -1112,6 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 50
+  _battery: {fileID: 0}
   _inventory: []
   _mouseEnding: 0
   _nullEnding: 1
@@ -1482,6 +1483,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8889191370035164234, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370035164234, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370035164234, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681192, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1493,6 +1506,14 @@ PrefabInstance:
     - target: {fileID: 8889191370884681193, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: m_Name
       value: Toaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: _dialogue
+      value: It's a toaster!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+      propertyPath: _interactionMode
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681195, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: m_RootOrder
@@ -1548,6 +1569,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+--- !u!1 &1255858156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8889191370884681193, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
+  m_PrefabInstance: {fileID: 1255858155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1255858157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255858156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 118cf756c855c5b44b084fe81b36a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reward: {fileID: 9218964100477009236, guid: 6ffda47f25d90d246975368568a74fa0, type: 3}
 --- !u!1 &1285844268
 GameObject:
   m_ObjectHideFlags: 0

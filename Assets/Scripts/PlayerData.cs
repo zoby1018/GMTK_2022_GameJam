@@ -10,6 +10,7 @@ public class PlayerData : MonoBehaviour
 
     private float _currentHealth;
     [SerializeField] private float _maxHealth;
+    [SerializeField] private Item _battery;
     //[SerializeField] private Image _fillImage;
     public List<Item> _inventory = new List<Item>();
     // Start is called before the first frame update

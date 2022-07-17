@@ -89,4 +89,18 @@ public class Hotbar : MonoBehaviour
     {
         
     }
+
+    public void ChargeBatteries()
+    {
+        for(int i=0; i<_inventory.Count; i++)
+        {
+            if(_inventory[i].name == "Dead Battery")
+            {
+
+                Destroy(_inventory[i].gameObject);
+                _inventory.Remove(_inventory[i]);
+
+            }
+        }
+    }
 }
