@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogue: Use a Med Pack to heal
-  _phase2Dialogue: 
+  _phase2Dialogue: You look healthy as horse who should be getting back to work.
   _outputItem: {fileID: 0}
   _interactionMode: 5
   _isVending: 0

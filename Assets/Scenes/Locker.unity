@@ -2367,7 +2367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: _dialogue
-      value: Breakroom
+      value: Break
       objectReference: {fileID: 0}
     - target: {fileID: 8889191370884681194, guid: b3687f95c20b8a94cafdf958ae72ab75, type: 3}
       propertyPath: _interactionMode

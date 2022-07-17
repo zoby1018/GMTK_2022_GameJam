@@ -9,7 +9,7 @@ public class Medbay : UtillityOptions
         if (item.Name == "Medpack")
         {
             _utillityRef._dialogueHandlerRef._playerRef.TakeDamage(-15);
-            _utillityRef._dialogueHandlerRef.OpenDialogue("You regained some health.", null, 4);
+            _utillityRef._dialogueHandlerRef.OpenDialogue("Now you look healthy as horse who should be getting back to work.", null, 4);
            
         }
 
