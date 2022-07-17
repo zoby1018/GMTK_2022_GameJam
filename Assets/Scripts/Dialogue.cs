@@ -89,7 +89,11 @@ public class Dialogue : MonoBehaviour
                 _confirmButton.gameObject.SetActive(true);
                 _inputContainer.gameObject.SetActive(true);
                 _outputContainer.gameObject.SetActive(true);
-                _bloodCostButton.gameObject.SetActive(true);
+                if (_dialogueHandlerRef._selectedUtillity.IsVending)
+                {
+                    _bloodCostButton.gameObject.SetActive(true);
+                }
+               
 
                 if (output != null)
                 {
@@ -198,6 +202,10 @@ public class Dialogue : MonoBehaviour
         if(_input != null)
         {
             if (_dialogueHandlerRef._selectedUtillity.IsVending)
+            {
+                _dialogueHandlerRef._selectedUtillity.PipelineConversion(_input);
+            }
+            else
             {
                 _dialogueHandlerRef._selectedUtillity.PipelineConversion(_input);
             }
