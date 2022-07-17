@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueHandler : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField] public PlayerData _playerRef;
     [SerializeField] public Image _fillImage;
     [SerializeField] public Hotbar _hotbar;
+    [SerializeField] public GameObject _toolTip;
+    [SerializeField] public TextMeshProUGUI _toolTipText;
     // Start is called before the first frame update
 
     private void Awake()
@@ -47,5 +50,17 @@ public class DialogueHandler : MonoBehaviour
     {
         _dialogueBackground.SetActive(false);
         _dialogueObject.CloseDialogue();
+    }
+
+    public void ShowTooltip(string info)
+    {
+        _toolTip.gameObject.SetActive(true);
+        _toolTipText.text = info;
+        _toolTip.transform.position = Input.mousePosition;
+    }
+
+    public void HideTooltip()
+    {
+        _toolTip.gameObject.SetActive(false);
     }
 }

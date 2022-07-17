@@ -137,6 +137,7 @@ public class Dialogue : MonoBehaviour
                 _dialogueLocked = true;
                 SceneManager.LoadScene(text);
             }
+            
         }
 
         

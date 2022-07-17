@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler, IPointerExitHandler
 {
 
     [SerializeField] private string _name;
+    [SerializeField] private string _tooltip;
     public string Name => _name;
 
     private Vector3 _startingPosition;
@@ -162,5 +163,20 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void UpdateDialogueHandler(DialogueHandler dialogueHandler)
     {
         _dialogueHandlerRef = dialogueHandler;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+       
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _dialogueHandlerRef.HideTooltip();
+    }
+
+    public void OnPointerMove(PointerEventData eventData)
+    {
+        _dialogueHandlerRef.ShowTooltip(_tooltip);
     }
 }

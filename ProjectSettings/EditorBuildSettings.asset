@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Room_1A.unity
+    path: Assets/Scenes/Entrance.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: Assets/Scenes/Room_1B.unity
     guid: cddec5934c7d0dd458d7c0692c7b6c2b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Room_1C.unity
     guid: 579d75748ae21344a9be2162af133609
   - enabled: 1
@@ -20,4 +20,43 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Death.unity
     guid: 3aca840e74073864e8cafcf7cf2dae64
+  - enabled: 1
+    path: Assets/Scenes/Boiler.unity
+    guid: 68b0dc7776fac904e870a29e77ad8210
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: 9e0219356de381d4ab4bb05b5019b8b5
+  - enabled: 1
+    path: Assets/Scenes/Break.unity
+    guid: 2f3b3dd391d0594459ab5387a5f0e97e
+  - enabled: 1
+    path: Assets/Scenes/Docks.unity
+    guid: 5aeb305ebd74bed4380afd6a01d91511
+  - enabled: 1
+    path: Assets/Scenes/FC.unity
+    guid: f257e90cadfdbde4d8e35e1ac8dbea85
+  - enabled: 1
+    path: Assets/Scenes/HR.unity
+    guid: e5ef84226cd61f242a3bb947e9a4ef9e
+  - enabled: 1
+    path: Assets/Scenes/Locker.unity
+    guid: 962631ebd8513c046a8c86681a9519e5
+  - enabled: 1
+    path: Assets/Scenes/Office.unity
+    guid: 9b94c26b4b645d440a9046dd242f1be3
+  - enabled: 1
+    path: Assets/Scenes/Restroom.unity
+    guid: 4e43c2eac7777974e89603e782734266
+  - enabled: 1
+    path: Assets/Scenes/Security.unity
+    guid: 5495839ab7046894db1a37ae8918600c
+  - enabled: 1
+    path: Assets/Scenes/Shipping.unity
+    guid: aad43f3469f4770438d87d26f57b5aaa
+  - enabled: 1
+    path: Assets/Scenes/Sorting.unity
+    guid: 9ec70a10471fc2245a8b75c4f4d03b4f
+  - enabled: 1
+    path: Assets/Scenes/Storage.unity
+    guid: 6411bcbfd4fdecb4f89f3934c720a500
   m_configObjects: {}

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Utillity : MonoBehaviour
 {
-    [SerializeField] private string _dialogue;
+    [SerializeField] public string _dialogue;
     [SerializeField] private string _phase2Dialogue;
     [SerializeField] private Item _outputItem;
     [SerializeField] private int _interactionMode;
@@ -19,11 +20,17 @@ public class Utillity : MonoBehaviour
     //10 == Liquid
 
     [SerializeField] private bool _isVending;
+    [SerializeField] private GameObject _toast;
+    [SerializeField] private TextMeshProUGUI _toastText;
+    private bool _firstClick = false;
+    [SerializeField]private string _toatDialogue;
+    [SerializeField]private bool _doesAToast;
+
     public bool IsVending => _isVending;
     [SerializeField]private bool _oneTimeInventory;
     [SerializeField]private int _stock;
 
-    [SerializeField] private List<string> _requiredInput = new List<string>();
+    [SerializeField] public List<string> _requiredInput = new List<string>();
     [SerializeField] private List<Item> _outputs = new List<Item>();
 
 
@@ -35,11 +42,20 @@ public class Utillity : MonoBehaviour
     [SerializeField] private string _option2;
     [HideInInspector] public string Option2Text => _option2;
 
+
+    [SerializeField] private Utillity _liquidContainer;
+
     // Start is called before the first frame update
     void Start()
     {
         _dialogueHandlerRef = FindObjectOfType<DialogueHandler>();
         _uoptions = GetComponent<UtillityOptions>();
+
+        if (_doesAToast)
+        {
+            _toast.SetActive(true);
+            _toastText.text = _toatDialogue;
+        }
         
     }
 
@@ -51,6 +67,9 @@ public class Utillity : MonoBehaviour
 
     public void OnUtillityClick()
     {
+        _firstClick = true;
+        _toast.SetActive(false);
+
         if(_oneTimeInventory && _stock > 0)
         {
             _dialogueHandlerRef.SetSelectedUitillity(this);
@@ -131,5 +150,25 @@ public class Utillity : MonoBehaviour
     public void TriggerOption2()
     {
         _uoptions.Option2();
+    }
+
+    public void Liquidate()
+    {
+        Utillity newU = Instantiate(_liquidContainer);
+        newU.transform.position = this.transform.position;
+        Destroy(this.gameObject);
+    }
+
+    public bool CheckIfRequiredInput(Item item)
+    {
+        for(int i=0; i<_requiredInput.Count; i++)
+        {
+            if(item.Name == _requiredInput[i])
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

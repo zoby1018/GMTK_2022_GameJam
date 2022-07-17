@@ -143,7 +143,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Tool Voucher
+  _tooltip: Exchnage at a Tool Spinner for a random tool!
   UsePointerDisplacement: 1
+  _attemptingToAddToInventory: 0
+  _hotbar: {fileID: 0}
+  _inputBox: {fileID: 0}
+  _isInInventory: 0
 --- !u!50 &-8050598667151466110
 Rigidbody2D:
   serializedVersion: 4

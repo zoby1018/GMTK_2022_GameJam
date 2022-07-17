@@ -143,8 +143,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Medpack
+  _tooltip: Can be used at Med stations to heal.
   UsePointerDisplacement: 1
   _attemptingToAddToInventory: 0
+  _hotbar: {fileID: 0}
   _inputBox: {fileID: 0}
   _isInInventory: 0
 --- !u!50 &-8050598667151466110
@@ -204,7 +206,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2219818306406379508
 CanvasRenderer:
